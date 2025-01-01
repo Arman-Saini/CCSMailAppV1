@@ -1,0 +1,214 @@
+/* frontend/src/styles/components/EmailForm.css */
+.email-form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+  }
+  
+  .form-group input.error,
+  .form-group textarea.error {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .submit-button,
+  .reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    min-width: 120px;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+  
+  .submit-button:disabled {
+    background-color: #b3d7ff;
+    cursor: not-allowed;
+  }
+  
+  .reset-button {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #ddd;
+  }
+  
+  .reset-button:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .reset-button:disabled {
+    background-color: #f8f9fa;
+    color: #adb5bd;
+    cursor: not-allowed;
+  }
+  
+  /* Loading spinner container styles */
+  .submit-button .loading-spinner {
+    margin-right: 8px;
+  }
+  
+  /* File input section styles */
+  .file-input-section {
+    margin-top: 16px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .email-form-container {
+      margin: 10px;
+      padding: 15px;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+    }
+  
+    .submit-button,
+    .reset-button {
+      width: 100%;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .email-form-container {
+      background-color: #2d2d2d;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .form-group label {
+      color: #e1e1e1;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      background-color: #3d3d3d;
+      border-color: #4d4d4d;
+      color: #e1e1e1;
+    }
+  
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #0d6efd;
+    }
+  
+    .form-group input.error,
+    .form-group textarea.error {
+      background-color: #412b2b;
+    }
+  
+    .reset-button {
+      background-color: #3d3d3d;
+      color: #e1e1e1;
+      border-color: #4d4d4d;
+    }
+  
+    .reset-button:hover {
+      background-color: #4d4d4d;
+    }
+  
+    .reset-button:disabled {
+      background-color: #3d3d3d;
+      color: #6c757d;
+    }
+  }
+  
+  /* Animation for form submission */
+  @keyframes submitPulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .submit-button.submitting {
+    animation: submitPulse 1.5s infinite;
+  }
+  
+  /* Status message spacing */
+  .status-message {
+    margin-bottom: 16px;
+  }
+  
+  /* Accessibility focus styles */
+  .form-group input:focus-visible,
+  .form-group textarea:focus-visible,
+  .submit-button:focus-visible,
+  .reset-button:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
